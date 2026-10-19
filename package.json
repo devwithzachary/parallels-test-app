@@ -1,0 +1,27 @@
+{
+  "name": "matrix-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "node scripts/tauri.js",
+    "tauri:dev": "node scripts/tauri.js dev",
+    "tauri:build": "node scripts/tauri.js build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.1.1",
+    "@tauri-apps/plugin-dialog": "^2.2.0",
+    "@tauri-apps/plugin-fs": "^2.2.0",
+    "@tauri-apps/plugin-notification": "^2.2.1",
+    "@tauri-apps/plugin-os": "^2.2.0",
+    "lucide": "^1.47.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

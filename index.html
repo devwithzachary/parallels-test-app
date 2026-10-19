@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description"
+    content="Matrix App: Cross-platform desktop telemetry, native integration testing, and UI consistency benchmark using Tauri v2 and Vite with TypeScript." />
+  <title>Matrix App - Cross-Platform Telemetry & Sandbox</title>
+  <link rel="icon" type="image/svg+xml" href="/app-icon.svg" />
+
+  <!-- Avoid Flash of Unstyled Content (FOUC) for saved color-scheme preference -->
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("matrix_theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    } catch (e) { }
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand-logo" title="Matrix App Desktop">
+          <svg width="24" height="24" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 120 376 L 120 156 L 256 280 L 392 156 L 392 376" stroke="#00f0ff" stroke-width="48"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 120 376 L 120 156 L 256 280 L 392 156 L 392 376" stroke="#ffffff" stroke-width="16"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="brand-title">
+          <h1>Matrix App</h1>
+          <span class="brand-subtitle">Cross-Platform Telemetry & DPI Benchmark</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Platform Environment Indicator Pill -->
+        <div id="platform-env-pill" class="badge badge-native">
+          <span>TAURI V2 RUNTIME</span>
+        </div>
+
+        <!-- Color Theme Toggle Button -->
+        <button id="theme-toggle-btn" class="btn btn-outline btn-sm" title="Toggle Light / Dark Mode">
+          <span id="theme-toggle-icon"></span>
+          <span id="theme-toggle-label">Theme</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Application Body -->
+    <main class="app-main">
+      <!-- Section 1: Hero Dashboard & Telemetry -->
+      <div id="telemetry-root"></div>
+
+      <!-- Section 2: Native System Integration Tests -->
+      <div id="native-tests-root"></div>
+
+      <!-- Section 3: Platform Stress & Scaling Sandbox -->
+      <div id="stress-sandbox-root"></div>
+    </main>
+
+    <!-- Footer Telemetry & Build Target Status -->
+    <footer class="app-footer">
+      <div>
+        <span>Matrix App v0.1.0 • Tauri v2 + Vite + TypeScript</span>
+      </div>
+      <div class="footer-tags">
+        <span>macOS (.dmg/.app)</span>
+        <span>•</span>
+        <span>Windows 11 ARM (.msi/.exe)</span>
+        <span>•</span>
+        <span>Ubuntu ARM (.deb/AppImage)</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
